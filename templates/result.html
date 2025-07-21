@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <title>Sales Breakdown</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            padding-top: 50px;
+            text-align: center;
+        }
+        .box {
+            background: white;
+            padding: 30px;
+            width: 450px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .line {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .total {
+            margin-top: 30px;
+            font-size: 24px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>📊 Sales Prediction Breakdown</h2>
+
+        <div class="line">📺 TV Spend: ₹{{ tv }} → contributes: {{ tv_contrib | round(2) }} units</div>
+        <div class="line">📻 Radio Spend: ₹{{ radio }} → contributes: {{ radio_contrib | round(2) }} units</div>
+        <div class="line">🗞 Newspaper Spend: ₹{{ news }} → contributes: {{ news_contrib | round(2) }} units</div>
+
+        <hr>
+        <div class="total">Total Predicted Sales: {{ total | round(2) }} units</div>
+
+        <br><a href="/">🔁 Predict Again</a>
+    </div>
+</body>
+</html>
